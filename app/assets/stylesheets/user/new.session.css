@@ -100,20 +100,13 @@
   font-weight: bold;
 }
 
-.form-info-text {
-  font-size: 15px;
-}
 
-.input-name-wrap {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+
 
 .input-name {
-  width: 130px;
-  margin: 5px 20px 0 20px;
-  height: 48px;
+  width: 700px;
+  margin: 5px 20px 0 0px;
+  height: 400px;
   line-height: 30px;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -145,11 +138,7 @@
   padding: 0 5px;
 }
 
-.form-bottom-text {
-  font-size: 15px;
-  margin-top: 10px;
-  text-align: center;
-}
+
 
 .form-bottom-text:last-child {
   margin: 0;
@@ -176,9 +165,3 @@
   cursor: pointer;
 }
 
-.register-info {
-  margin: 30px 180px 0 0;
-  color: #0099e8;
-  text-align: right;
-  cursor: pointer;
-}
