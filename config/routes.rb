@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'problems/index'
+  devise_for :users
   root to: "problems#index"
   resources :problems
 end
