@@ -87,5 +87,29 @@
   color: #333333;
 }
 
+.purchase-btn {
+  width: 400px;
+  background: #d33cc6;
+  text-align: center;
+  border-radius: 100%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 20px;
 
+}
+
+.purchase-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.problem-mark{
+  font-weight: bold;
+  font-size: 30px;
+  margin-right: 8px;
+}
 
