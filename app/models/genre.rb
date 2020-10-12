@@ -7,6 +7,6 @@ class Genre < ActiveHash::Base
     { id: 5, name: '恋愛・夫婦'},
     { id: 6, name: '経済・資産'},
     { id: 7, name: '子育て・結婚'},
-    { id: 8, name: 'その他'},
+    { id: 8, name: 'その他'}
   ]
 end

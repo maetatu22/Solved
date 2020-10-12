@@ -1,5 +1,5 @@
 class ProblemsController < ApplicationController
-  
+  before_action :authenticate_user!, except: :index
 
   def index
   end
@@ -9,8 +9,8 @@ class ProblemsController < ApplicationController
   end
 
   def create
-    @problem = Problrm.new(problem_params)
-    if @problem.sava
+    @problem = Problem.new(problem_params)
+    if @problem.save
       redirect_to root_path
     else
       render :new

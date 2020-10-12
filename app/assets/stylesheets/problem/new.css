@@ -1,0 +1,19 @@
+.input-name-wrap{
+  
+}
+
+.form-group-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.form-group-text-genre{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
