@@ -1,0 +1,46 @@
+<header class="sessions-header">
+<h1>Solved</h1>
+</header>
+<%= form_with model: @problem, url: problems_path , class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      相談内容
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+  
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">タイトル</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :title, class:"input-default", id:"user-name", placeholder:"タイトルを入力してください", maxlength:"40" %>
+  </div>
+  
+  <div class="form-group-text">
+    <div class='form-text-wrap'>
+      <label class="form-text">内容</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :text, class:"input-name", id:"first-name", placeholder:"相談内容を入力してください。" %>
+    </div>
+  </div>
+  <div class="form-group-text-genre">
+    <div class='form-text-wrap'>
+      <label class="form-text">ジャンル</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='form-jender'>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"jender", id:""})%>
+    </div>
+  </div>
+  
+  
+  <div class='register-btn'>
+    <%= f.submit "投稿する" ,class:"register-red-btn" %>
+  </div>
+</div>
+<% end %>
