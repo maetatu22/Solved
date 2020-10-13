@@ -35,6 +35,15 @@ class ProblemsController < ApplicationController
     end
   end
 
+  def destroy
+    @problem =Problem.find(params[:id])
+    if @problem.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def problem_params
