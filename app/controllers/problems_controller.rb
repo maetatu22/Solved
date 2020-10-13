@@ -2,6 +2,7 @@ class ProblemsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
+    @problems = Problem.all
   end
 
   def new

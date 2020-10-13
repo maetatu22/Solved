@@ -21,7 +21,7 @@
     <ul class='lists'>
      
       <% if user_signed_in? %>
-        <li><%= link_to "aaa", "#", class: "user-name" %></li>
+        <li><%= link_to current_user.name, "#", class: "user-name" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <%= link_to 'ログイン', user_session_path, class: "login" %>
@@ -31,6 +31,21 @@
     </ul>
   </div>
 </header>
+<div class='problems'>
+ <% @problems.each do |problem| %>
+  <div class='problem-lists'>
+ 
+    <div class="user-names">
+      <h2><%= problem.user.name %></h2>
+    </div>
+    <div class="problem-text">
+      <h2 class="problem"><%= problem.title %></h2>
+    </div>
+    
+  </div>
+  <% end %>
+</div>
+
 <div class='purchase-btn'>
   <a class='purchase-btn-text' href="/problems/new"><span class=problem-mark>Q</span>お悩み相談する</a>
   
