@@ -11,11 +11,13 @@
     <p><%= @problem.text %></p>
   </div>
     <div class="show-config">
+    <% if user_signed_in? && current_user.id == @problem.user_id%>
       <div class="edit-problem">
-      <%= link_to "投稿を編集する" ,"#" ,class:"edit"%>
+      <%= link_to "投稿を編集する" ,edit_problem_path(@problem.id) ,class:"edit"%>
       </div>
       <div class="destroy-problem">
       <%= link_to "投稿を削除する" ,"#" ,class:"destroy", method: :delete%>
       </div>
+      <%end%>
     </div>
 </div>
