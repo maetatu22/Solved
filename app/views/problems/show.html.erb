@@ -2,17 +2,20 @@
 <h1>Solved</h1>
 </header>
 <div class="details">
-  <div class="detail-titel">
+  <div class="detail-title">
     <h2><%= @problem.title %></h2>
-    <%= @problem.created_at %>
+    <span clsss="user-name-show"><%= @problem.user.name %>さん</span>
+    <p class="created-at"><%= @problem.created_at.strftime('%Y/%m/%d') %></p>
   </div>
   <div class="detail-text">
     <p><%= @problem.text %></p>
   </div>
-  <div class="edit-problem">
-  <%= link_to "投稿を編集する" ,"#" ,class:"edit"%>
-  </div>
-  <div class="destroy-problem">
-  <%= link_to "投稿を削除する" ,"#" ,class:"destroy", method: :delete%>
-  </div>
+    <div class="show-config">
+      <div class="edit-problem">
+      <%= link_to "投稿を編集する" ,"#" ,class:"edit"%>
+      </div>
+      <div class="destroy-problem">
+      <%= link_to "投稿を削除する" ,"#" ,class:"destroy", method: :delete%>
+      </div>
+    </div>
 </div>

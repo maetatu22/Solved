@@ -1,0 +1,17 @@
+.details{
+  
+  width: 50vw;
+  margin: 0 auto;
+  background-color: rgb(202, 216, 216);
+  border: 2px solid rgb(153, 144, 144);
+  
+}
+
+.show-config{
+  display: flex;
+}
+
+.edit{
+  margin-right: 20px;
+}
+
