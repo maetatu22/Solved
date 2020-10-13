@@ -1,0 +1,25 @@
+<header class="sessions-header">
+<h1>Solved</h1>
+</header>
+<div class='problems'>
+<% @problems.each do |problem| %> 
+  <div class='problem-lists'>
+ 
+    <div class="user-names">
+      <h2><%= @name %></h2>
+      
+    </div>
+     <%= link_to problem_path(problem.id),class:"link-title", method: :get do %>
+    <div class="problem-text">
+      <h2 class="problem"><%= problem.title %></h2>
+    </div>
+    <% end %>
+    
+  </div>
+  <% end %>
+</div>
+
+<div class='purchase-btn'>
+  <a class='purchase-btn-text' href="/problems/new"><span class=problem-mark>Q</span>お悩み相談する</a>
+  
+</div>

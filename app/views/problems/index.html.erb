@@ -15,7 +15,7 @@
     <ul class='lists'>
      
       <% if user_signed_in? %>
-        <li><%= link_to current_user.name, "#", class: "user-name" %></li>
+        <li><%= link_to current_user.name, user_path(current_user.id), class: "user-name" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <%= link_to 'ログイン', user_session_path, class: "login" %>
@@ -28,11 +28,12 @@
 <div class='problems'>
  <% @problems.each do |problem| %>
   <div class='problem-lists'>
- 
+   <%= link_to user_path(problem[:user_id]),class:"link-title", method: :get do %>
     <div class="user-names">
       <h2><%= problem.user.name %></h2>
     </div>
-     <%= link_to problem_path(problem.id),class:"link-title", method: :get do %>
+   <%end%>
+   <%= link_to problem_path(problem.id),class:"link-title", method: :get do %>
     <div class="problem-text">
       <h2 class="problem"><%= problem.title %></h2>
     </div>
