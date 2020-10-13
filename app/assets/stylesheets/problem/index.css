@@ -130,10 +130,8 @@
   height: 100%;
 }
 
-.problem-text{
-  
-}
 
-.problems{
-  
+.link-title{
+  text-decoration: none;
+  color: black;
 }
