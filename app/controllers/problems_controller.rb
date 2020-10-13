@@ -22,6 +22,19 @@ class ProblemsController < ApplicationController
     @problem = Problem.find(params[:id])
   end
 
+  def edit
+    @problem = Problem.find(params[:id])
+  end
+
+  def update
+    @problem = Problem.find(params[:id])
+    if @problem.update(problem_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def problem_params
