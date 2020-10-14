@@ -21,3 +21,27 @@
       <%end%>
     </div>
 </div>
+  <div class="comments">
+    <div class="container">
+      <% if current_user %>
+        <%= form_with(model: [@problem, @comment], local: true) do |form| %>
+          <%= form.text_area :comment_text, placeholder: "コメントする", rows: "2" %>
+          <%= form.submit "SEND" %>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <% end %>
+    </div>
+    <div class="comment-list">
+      <h4>コメント一覧</h4>
+      <% @comments.each do |comment| %>
+      <div class="comment-text-lists">
+        <p><%= comment.created_at %></p>
+        <div class="comment-textes">
+          <p><%= comment.user.name %></p>
+          <p><%= comment.comment_text %>
+        </div>
+      </div>
+      <%end%>
+    </div>
+  </div>

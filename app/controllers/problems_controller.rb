@@ -20,6 +20,8 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = Problem.find(params[:id])
+    @comment = Comment.new
+    @comments = @problem.comments.includes(:problem,:user)
   end
 
   def edit
