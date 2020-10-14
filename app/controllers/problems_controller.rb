@@ -2,7 +2,7 @@ class ProblemsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @problems = Problem.includes(:user)
+    @problems = Problem.includes(:user).order("created_at DESC")
   end
 
   def new
