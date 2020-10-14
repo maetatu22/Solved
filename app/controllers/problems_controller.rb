@@ -1,5 +1,6 @@
 class ProblemsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index,:search]
+
 
   def index
     @problems = Problem.includes(:user).order("created_at DESC")
@@ -22,6 +23,11 @@ class ProblemsController < ApplicationController
     @problem = Problem.find(params[:id])
     @comment = Comment.new
     @comments = @problem.comments.includes(:problem,:user)
+  end
+  
+  def search
+   
+    @problems = Problem.search(params[:keyword])
   end
 
   def edit

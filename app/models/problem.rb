@@ -4,6 +4,15 @@ class Problem < ApplicationRecord
   belongs_to :user
   has_many :comments
 
+  def self.search(search)
+    if search != ""
+      Problem.where('title LIKE(?)', "%#{search}%")
+    else
+      Problem.all
+    end
+  end
+
+
   with_options presence: true do
     validates :title, length: { maximum: 20}
     validates :text, length: { minimum: 15, maximum: 200 }
