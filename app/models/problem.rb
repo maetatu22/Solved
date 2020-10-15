@@ -18,5 +18,5 @@ class Problem < ApplicationRecord
     validates :text, length: { minimum: 15, maximum: 200 }
     validates :genre
   end
-    validates :genre_id, numericality: { other_than: 1, message:  "Select"} 
+    validates :genre_id, numericality: { other_than: 1, message:  "を選んで下さい"} 
 end
