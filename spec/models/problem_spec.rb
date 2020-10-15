@@ -15,32 +15,32 @@ RSpec.describe Problem, type: :model do
       it "titleが空だと登録できない" do
         @problem.title = ""
         @problem.valid?
-        expect(@problem.errors.full_messages).to include("Title can't be blank")
+        expect(@problem.errors.full_messages).to include("タイトルを入力してください")
       end
       it "titleが20文字より多いと登録できない" do
         @problem.title = "1234567890123456789012"
         @problem.valid?
-        expect(@problem.errors.full_messages).to include("Title is too long (maximum is 20 characters)")
+        expect(@problem.errors.full_messages).to include("タイトルは20文字以内で入力してください")
       end
       it "textが空だと登録できない" do
         @problem.text = ""
         @problem.valid?
-        expect(@problem.errors.full_messages).to include("Text can't be blank")
+        expect(@problem.errors.full_messages).to include("テキストを入力してください")
       end
       it "textが14文字以下だと登録できない" do
         @problem.text = "aaa"
         @problem.valid?
-        expect(@problem.errors.full_messages).to include("Text is too short (minimum is 15 characters)")
+        expect(@problem.errors.full_messages).to include("テキストは15文字以上で入力してください")
       end
       it "textが200文字以上だと登録できない" do
         @problem.text = "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
         @problem.valid?
-        expect(@problem.errors.full_messages).to include("Text is too long (maximum is 200 characters)")
+        expect(@problem.errors.full_messages).to include("テキストは200文字以内で入力してください")
       end
       it "genreが選択されていないと登録できない" do
         @problem.genre_id = 1
         @problem.valid?
-        expect(@problem.errors.full_messages).to include("Genre Select")
+        expect(@problem.errors.full_messages).to include("ジャンルを選んで下さい")
       end
     end
 

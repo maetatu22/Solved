@@ -73,3 +73,5 @@ gem 'active_hash'
 
 gem 'rspec-rails', '~> 4.0.0'
 
+gem 'rails-i18n'
+

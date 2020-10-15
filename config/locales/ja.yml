@@ -1,0 +1,11 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       name: 名前
+     problem:
+       text: テキスト
+       image: 画像
+       name: 名前
+       genre_id: ジャンル
+       title: タイトル
