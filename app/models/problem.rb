@@ -2,7 +2,7 @@ class Problem < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :genre
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   def self.search(search)
     if search != ""
