@@ -17,3 +17,8 @@
   margin: 0 auto;
   margin-bottom: 40px;
 }
+
+.image-preview img{
+  width: 270px;
+  height: 270px;
+}
