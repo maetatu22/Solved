@@ -56,6 +56,6 @@ class ProblemsController < ApplicationController
   private
 
   def problem_params
-    params.require(:problem).permit(:title, :text, :genre_id).merge(user_id: current_user.id)
+    params.require(:problem).permit(:image,:title, :text, :genre_id).merge(user_id: current_user.id)
   end
 end
