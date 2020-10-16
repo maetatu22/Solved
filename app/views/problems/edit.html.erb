@@ -28,6 +28,15 @@
       <%= f.text_area :text, class:"input-name", id:"first-name", placeholder:"相談内容を入力してください。" %>
     </div>
   </div>
+    <div class="img-upload">
+      <div class="click-upload">
+        <p>
+          クリックして画像を添付
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+
   <div class="form-group-text-genre">
     <div class='form-text-wrap'>
       <label class="form-text">ジャンル</label>
