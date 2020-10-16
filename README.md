@@ -15,6 +15,7 @@
 
 - has_many :problems
 - has_many :comments
+- has_many :sns_credentials
 - belongs_to_active_hash :gender
 
 ## problemsテーブル
@@ -32,7 +33,7 @@
 - has_many :comments
 - belongs_to_active_hash :genre
 
-## comments
+## commentsテーブル
 
 | Column             | Type       | Options           |
 | ------------------ | ---------- | ----------------- |
@@ -45,3 +46,15 @@
 
 - belongs_to :user
 - belongs_to :problem
+
+## sns_credentialsテーブル
+
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| provider           | string     |                   |
+| uid                | string     |                   |
+| user               | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
