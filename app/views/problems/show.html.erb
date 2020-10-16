@@ -10,6 +10,7 @@
   <div class="detail-text">
     <p><%= @problem.text %></p>
   </div>
+  <%= image_tag @problem.image.variant(resize: '500x500'), class: 'message-image' if @problem.image.attached? %>
     <div class="show-config">
     <% if user_signed_in? && current_user.id == @problem.user_id%>
       <div class="edit-problem">
