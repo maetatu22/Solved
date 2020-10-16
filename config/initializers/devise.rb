@@ -15,7 +15,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7edc006b39c23ae49188d61cd4161da9f8d5f413da567febf57494e247e001489605b1150142a3b10ce3aeee9ba26633aceddc742a4db5ee44af72c2f2448dc1'
-  config.omniauth :facebook, Rails.application.credentials.facebook[:facebook_key], Rails.application.credentials.facebook[:facebook_secret], scope: 'email', info_fields: 'email', callback_url: "https://solved-29699.herokuapp.com/users/auth/facebook/callback"
+  config.omniauth :facebook,ENV['FACEBOOK_CLIENT_ID'],ENV['FACEBOOK_CLIENT_SECRET']
   config.omniauth :google_oauth2,ENV['GOOGLE_CLIENT_ID'],ENV['GOOGLE_CLIENT_SECRET']
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
