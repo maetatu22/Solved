@@ -13,7 +13,7 @@ class ProblemsController < ApplicationController
   def create
     @problem = Problem.new(problem_params)
     if @problem.save
-      redirect_to root_path
+      redirect_to problem_path(@problem.id)
     else
       render :new
     end

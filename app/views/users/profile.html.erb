@@ -33,12 +33,4 @@
     <%end%>
     </div>
   <%end%>
-
-  <% if user_signed_in? && current_user.id == @user.id%>
-    <div class="profile-edit">
-    <%= link_to "#", method: :get do%>
-      <h2>アカウント登録情報の変更</h2>
-    <%end%>
-    </div>
-  <%end%>
 </div>

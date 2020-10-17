@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "problems#index"
-  resources :users, only: [:edit, :update, :show] do
+  resources :users, only: [:show] do
     member do
       get 'profile'
       patch 'profile_update'
