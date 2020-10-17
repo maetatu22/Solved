@@ -1,5 +1,14 @@
 <%= render partial: "problems/header" %>
 
+<div class='form-header'>
+  <h1 class='form-header-text'>
+    <%= link_to profile_user_path(@problem.user.id), class:"user-name-link",method: :get do%>
+    <%= @problem.user.name %>
+    <%end%>
+    <span>さんの投稿</span>
+  </h1>
+</div>
+
 <div class="details">
   <div class="detail-title">
     <h2><%= @problem.title %></h2>
@@ -11,38 +20,54 @@
   </div>
   <%= image_tag @problem.image.variant(resize: '500x500'), class: 'message-image' if @problem.image.attached? %>
     <div class="show-config">
-    <% if user_signed_in? && current_user.id == @problem.user_id%>
-      <div class="edit-problem">
-      <%= link_to "投稿を編集する" ,edit_problem_path(@problem.id) ,class:"edit"%>
-      </div>
-      <div class="destroy-problem">
-      <%= link_to "投稿を削除する" ,"#" ,class:"destroy", method: :delete%>
-      </div>
-      <%end%>
-    </div>
-</div>
-  <div class="comments">
-    <div class="container">
-      <% if current_user %>
-        <%= form_with(model: [@problem, @comment]) do |form| %>
-          <%= form.text_area :comment_text, placeholder: "コメントする", rows: "2" %>
-          <%= form.submit "SEND" %>
-        <% end %>
-      <% else %>
-        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <% if user_signed_in? && (current_user.id == @problem.user_id) && @problem.solved_worrie == nil %>
+        <div class="edit-problem">
+          <%= link_to "投稿を編集する" ,edit_problem_path(@problem.id) ,class:"edit"%>
+        </div>
+        <div class="destroy-problem">
+          <%= link_to "投稿を削除する" , problem_path(@problem.id) ,class:"destroy", method: :delete%>
+        </div> 
+          <% if current_user && @problem.solved_worrie == nil%>
+            <%= link_to "問題が解決した" ,  problem_solved_worries_path(@problem.id), method: :post%>
+          <% end %>
+      <% elsif user_signed_in? && current_user.id == @problem.user_id %>   
+        <div class="destroy-problem">
+          <%= link_to "投稿を削除する" ,problem_path(@problem.id) ,class:"destroy", method: :delete%>
+        </div> 
       <% end %>
     </div>
-    <h4>コメント一覧</h4>
-    <div class="comment-list" id='comment-list'>
-      
-      <% @comments.each do |comment| %>
-      <div class="comment-text-lists">
-        <p><%= comment.created_at %></p>
-        <div class="comment-textes">
-          <p><%= comment.user.name %></p>
-          <p><%= comment.comment_text %></p>
-        </div>
-      </div>
-      <%end%>
-    </div>
+</div>
+
+<div class="solved-text">
+  <% if current_user && @problem.solved_worrie != nil%>
+    <h2>解決済み</h2>
+  <%end%>
+</div>
+
+<div class="comments">
+  <div class="container">
+    <% if current_user && @problem.solved_worrie == nil%>
+      <%= form_with(model: [@problem, @comment]) do |form| %>
+        <%= form.text_area :comment_text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% elsif current_user && @problem.solved_worrie != nil%>  
+        <strong><p>既に解決済みのためコメントはできません</p></strong>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
   </div>
+  <h4>コメント一覧</h4>
+  <div class="comment-list" id='comment-list'>
+    
+    <% @comments.each do |comment| %>
+    <div class="comment-text-lists">
+      <p><%= comment.created_at %></p>
+      <div class="comment-textes">
+        <p><%= comment.user.name %></p>
+        <p><%= comment.comment_text %></p>
+      </div>
+    </div>
+    <%end%>
+  </div>
+</div>

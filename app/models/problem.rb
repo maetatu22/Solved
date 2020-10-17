@@ -4,6 +4,7 @@ class Problem < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_one_attached :image
+  has_one :solved_worrie, dependent: :destroy
 
   def self.search(search)
     if search != ""

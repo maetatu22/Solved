@@ -38,7 +38,7 @@ class ProblemsController < ApplicationController
   def update
     @problem = Problem.find(params[:id])
     if @problem.update(problem_params)
-      redirect_to root_path
+      redirect_to problem_path(@problem.id)
     else
       render :edit
     end
