@@ -32,6 +32,7 @@
 - belongs_to :user
 - has_many :comments
 - belongs_to_active_hash :genre
+- has_one :solved_worries
 
 ## commentsテーブル
 
@@ -58,3 +59,14 @@
 ### Association
 
 - belongs_to :user
+
+## solved_worriesテーブル
+
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| problem            | references | foreign_key: true |
+
+### Association
+
+- belongs_to :problem
+

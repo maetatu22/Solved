@@ -1,0 +1,2 @@
+class SolvedWorrie < ApplicationRecord
+end
