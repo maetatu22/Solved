@@ -1,28 +1,5 @@
-<header class='top-page-header'>
-    <%# link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
-    <h1>Solved</h1>
-    <%= form_with url: search_problems_path, class:"search-form",method: :get, local: true do |f| %>
-      <%= f.text_field :keyword,  placeholder:'キーワードから探す' , class:'input-box'%>
-      
-      <%= f.submit "検索",class: "search-button" %>
-        <%# image_tag "search.png", class:"search-icon" %>
-      
-    <%end%>
-  <div class='nav'>
-    
-    <ul class='lists'>
-     
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.name, user_path(current_user.id), class: "user-name" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-        <%= link_to 'ログイン', user_session_path, class: "login" %>
-        
-      <% end %>
-     
-    </ul>
-  </div>
-</header>
+<%= render partial: "problems/header" %>
+
 <div class='problems'>
  <% @problems.each do |problem| %>
   <div class='problem-lists'>

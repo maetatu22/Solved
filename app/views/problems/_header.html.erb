@@ -1,0 +1,19 @@
+<header class='top-page-header'>    
+  <%= link_to root_path,class: 'title-link', method: :get do%>
+    <h1>Solved</h1>
+  <%end%>
+    <%= form_with url: search_problems_path, class:"search-form",method: :get, local: true do |f| %>
+      <%= f.text_field :keyword,  placeholder:'キーワードから探す' , class:'input-box'%>
+      <%= f.submit "検索",class: "search-button" %>
+    <%end%>
+    <div class='nav'>
+      <ul class='lists'>      
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.name, user_path(current_user.id), class: "user-name" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <% else %>
+          <%= link_to 'ログイン', user_session_path, class: "login" %>          
+        <% end %>      
+      </ul>
+    </div>
+  </header>

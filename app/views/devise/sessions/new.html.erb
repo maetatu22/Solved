@@ -1,6 +1,5 @@
-<header class="sessions-header">
-<h1>Solved</h1>
-</header>
+<%= render partial: "problems/header2" %>
+
 <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
