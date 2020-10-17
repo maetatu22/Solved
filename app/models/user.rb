@@ -11,7 +11,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :self_introduction, length: { maximum: 160 }
-  validates :password ,format:  { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i, message: "は半角英数字混合で入力してください"}
+  validates :password ,format:  { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i, message: "は半角英数字混合で入力してください"}, on: :create
+
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create

@@ -1,0 +1,16 @@
+.form-header-text-profile {
+  line-height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: bold;
+  color: rgb(228, 74, 176);
+}
+
+.form-header-text-profile span{
+  color: black;
+}
+
+.profiles{
+
+  width: 50vw;
+  margin: 0 auto;
+}
