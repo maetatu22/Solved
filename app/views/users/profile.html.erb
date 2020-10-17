@@ -1,0 +1,36 @@
+<%= render partial: "problems/header2" %>
+
+<div class='form-header'>
+    <h1 class='form-header-text-profile'>
+     <%= @user.name%> <span>さんのプロフィール</span>
+    </h1>
+</div>
+
+<div class="profiles">
+  <div class="profile-text">
+    <h4>自己紹介</h4>
+    <p><%= @user.self_introduction %></p>
+  </div>
+  <div class="profile-jender">
+    <h4>性別</h4>
+    <p><%= @user.gender.name %></p>
+  </div>
+  <div class="profile-birthday">
+  <h4>年齢</h4>
+  <% if @user.birthday != nil %>
+  <pre><%= "#{@user.birthday.year}年 #{@user.birthday.month}月 #{@user.birthday.day}日" %></pre>
+  <%else%>
+  <p>非公開</p>
+  <%end%>
+  </div>
+</div>
+
+<div class="edits">
+  <% if user_signed_in? && current_user.id == @user.id%>
+    <div class="profile-edit">
+    <%= link_to profile_edit_user_path(@user.id), method: :get do %>
+      <h2>プロフィールを編集</h2>
+    <%end%>
+    </div>
+  <%end%>
+</div>

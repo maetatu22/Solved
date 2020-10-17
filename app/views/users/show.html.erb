@@ -5,8 +5,9 @@
   <div class='problem-lists'>
  
     <div class="user-names">
+    <%= link_to profile_user_path(@user.id), method: :get do%>
       <h2><%= @name %></h2>
-      
+    <%end%>
     </div>
      <%= link_to problem_path(problem.id),class:"link-title", method: :get do %>
     <div class="problem-text">
