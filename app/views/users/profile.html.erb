@@ -34,3 +34,10 @@
     </div>
   <%end%>
 </div>
+
+
+<div>
+  <%= link_to user_path(@user.id) , method: :get do%>
+    <%"#{@user.name}さんの投稿一覧"%>
+  <%end%>
+</div>

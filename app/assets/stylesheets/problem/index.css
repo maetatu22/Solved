@@ -3,6 +3,34 @@
  
 }
 
+.problems{
+  padding: 0.5em 1em;
+    margin: 1em 0;
+    background: #f4f4f4;
+    border-left: solid 6px #fda1bd;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+  width: 67%;
+  font-size: 25px;
+  margin: 0 auto;
+  margin-top: 20px;
+  
+}
+
+.problem-lists{
+  height: 60px;
+  
+  border-bottom: 2px solid #a79fa1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.problem{
+  color: rgb(27, 89, 221);
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
+}
+
 .top-page-header {
   width: 100vw;
   /* padding: 2vh 15vw; */
@@ -160,16 +188,7 @@
   margin-right: 8px;
 }
 
-.problem-lists{
-  
-  height: 60px;
-  width: 80vw;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  border-bottom: 2px solid rgb(141, 133, 133);
-  margin-top: 30px;
-}
+
 
 .user-names{
   width: 20vw;
@@ -182,4 +201,7 @@
   text-decoration: none;
   color: black;
 }
+
+
+
 

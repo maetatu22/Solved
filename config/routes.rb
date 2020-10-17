@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :problems do
     resources :comments, only: :create
+    resources :solved_worries, only: :create
     collection do
       get 'search'
     end

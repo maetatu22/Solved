@@ -1,26 +1,23 @@
-
- 
 <%= render partial: "problems/header" %>
 
 <div class='problems'>
- <% @problems.each do |problem| %>
-  <div class='problem-lists'>
-   <%= link_to user_path(problem[:user_id]),class:"link-title", method: :get do %>
-    <div class="user-names">
-      <h2><%= problem.user.name %></h2>
+  <% @problems.each do |problem| %>
+    <div class='problem-lists'>
+      <%= link_to problem_path(problem.id),class:"link-title", method: :get do %>
+        <div class="problem-text">
+          <p class="problem"><%= problem.title %></p>
+        </div>
+      <% end %>
+      <% if problem.solved_worrie != nil%>
+        <div class="problem-solved">
+          <h4>解決済み</h4>
+        </div>
+      <%end%>
     </div>
-   <%end%>
-   <%= link_to problem_path(problem.id),class:"link-title", method: :get do %>
-    <div class="problem-text">
-      <h2 class="problem"><%= problem.title %></h2>
-    </div>
-    <% end %>
-    
-  </div>
   <% end %>
 </div>
 
 <div class='purchase-btn'>
   <a class='purchase-btn-text' href="/problems/new"><span class=problem-mark>Q</span>お悩み相談する</a>
-  
 </div>
+
