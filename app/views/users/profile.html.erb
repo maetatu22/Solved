@@ -9,7 +9,6 @@
  <h4 class="self-introduction-title">自己紹介</h4>
 <div class="profiles">
   <div class="profile-text">
-   
     <p><%= @user.self_introduction %></p>
   </div>
   <div class="profile-jender">
@@ -17,12 +16,17 @@
     <p><%= @user.gender.name %></p>
   </div>
   <div class="profile-birthday">
-  <h4 class="blue-title">生年月日</h4>
-  <% if @user.birthday != nil %>
-  <pre><%= "#{@user.birthday.year}年 #{@user.birthday.month}月 #{@user.birthday.day}日" %></pre>
-  <%else%>
-  <p>非公開</p>
-  <%end%>
+    <h4 class="blue-title">生年月日</h4>
+    <% if @user.birthday != nil %>
+    <pre><%= "#{@user.birthday.year}年 #{@user.birthday.month}月 #{@user.birthday.day}日" %></pre>
+    <%else%>
+    <p>非公開</p>
+    <%end%>
+  </div>
+
+  <div class="best-answer-length">
+    <h4 class="blue-title">ベストアンサーに選ばれた回数</h4>
+    <p><%="#{@user.best_users.length}回" %></p>
   </div>
 </div>
 
