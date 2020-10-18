@@ -18,5 +18,14 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'best_answer'
+    end
   end
+
+  
+    
+  
+
+  post 'user/:user_id/problem/:id', to: 'best_users#best_create'
 end

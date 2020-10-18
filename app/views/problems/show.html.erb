@@ -11,61 +11,81 @@
 
 <div class="details">
   <div class="detail-title">
+    <p class="created-at"><%= @problem.created_at.strftime("%Y-%m-%d %H:%M") %></p>
     <h2><%= @problem.title %></h2>
-    <span clsss="user-name-show"><%= @problem.user.name %>さん</span>
-    <p class="created-at"><%= @problem.created_at.strftime('%Y/%m/%d') %></p>
   </div>
   <div class="detail-text">
     <p><%= @problem.text %></p>
   </div>
-  <%= image_tag @problem.image.variant(resize: '500x500'), class: 'message-image' if @problem.image.attached? %>
-    <div class="show-config">
-      <% if user_signed_in? && (current_user.id == @problem.user_id) && @problem.solved_worrie == nil %>
-        <div class="edit-problem">
-          <%= link_to "投稿を編集する" ,edit_problem_path(@problem.id) ,class:"edit"%>
-        </div>
-        <div class="destroy-problem">
-          <%= link_to "投稿を削除する" , problem_path(@problem.id) ,class:"destroy", method: :delete%>
-        </div> 
-          <% if current_user && @problem.solved_worrie == nil%>
-            <%= link_to "問題が解決した" ,  problem_solved_worries_path(@problem.id), method: :post%>
-          <% end %>
-      <% elsif user_signed_in? && current_user.id == @problem.user_id %>   
-        <div class="destroy-problem">
-          <%= link_to "投稿を削除する" ,problem_path(@problem.id) ,class:"destroy", method: :delete%>
-        </div> 
-      <% end %>
+  <%= image_tag @problem.image.variant(resize: '150x300'), class: 'message-image' if @problem.image.attached? %>
+  <div class="genre-selected">
+    <%="カテゴリー：#{@problem.genre.name}"%>
+  </div>
+</div>
+
+<div class="show-config">
+  <% if user_signed_in? && (current_user.id == @problem.user_id) && @problem.solved_worrie == nil %>
+    <div class="edit-problem">
+      <%= link_to "投稿を編集する" ,edit_problem_path(@problem.id) ,class:"edit-btn"%>
     </div>
+    <div class="destroy-problem">
+      <%= link_to "投稿を削除する" , problem_path(@problem.id) ,class:"destroy-btn", method: :delete%>
+    </div> 
+    <% if current_user && @problem.solved_worrie == nil%>
+    <div>
+    <%= link_to "問題が解決した" ,  problem_solved_worries_path(@problem.id),class:"solved-btn-pink", method: :post%>
+    </div>
+    <% end %>
+  <% elsif user_signed_in? && current_user.id == @problem.user_id %>   
+    <div class="destroy-problem">
+      <%= link_to "投稿を削除する" ,problem_path(@problem.id) ,class:"destroy-btn", method: :delete%>
+    </div> 
+  <% end %>
 </div>
 
 <div class="solved-text">
-  <% if current_user && @problem.solved_worrie != nil%>
-    <h2>解決済み</h2>
+  <% if current_user && @problem.solved_worrie != nil %>
+    <h2>この悩みは解決しました</h2>
   <%end%>
 </div>
 
-<div class="comments">
+<div class="best-answer-select">
+  <% if (@problem.best_user == nil && @problem.solved_worrie != nil) && user_signed_in? && (current_user.id == @problem.user_id)%>
+  <div>
+    <%= link_to "ベストアンサーを選択する", best_answer_problem_path(@problem.id),class: "best-answer-select-link", method: :get%>
+  </div>
+  <%elsif @problem.best_user != nil && @problem.solved_worrie != nil%>
+  <div class="best-answer-name">
+    <%= link_to profile_user_path(@problem.best_user.user.id),class: "best-answer-name-link" ,method: :get do %>
+      <%= "ベストアンサーは#{@problem.best_user.user.name}さんです" %>
+    <%end%>
+  </div>
+  <%end%>
+</div>
+
+<div class="comments-lists-block">
   <div class="container">
     <% if current_user && @problem.solved_worrie == nil%>
       <%= form_with(model: [@problem, @comment]) do |form| %>
-        <%= form.text_area :comment_text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
+        <%= form.text_area :comment_text, placeholder: "コメントする",class:"comments-box", rows: "2" %><br>
+        <%= form.submit "コメントを送信する"  ,class:"comment-submit"%>
       <% end %>
     <% elsif current_user && @problem.solved_worrie != nil%>  
-        <strong><p>既に解決済みのためコメントはできません</p></strong>
+        <strong><p class="solved-comment-no">※※※ 既に解決済みのためコメントはできません ※※※</p></strong>
     <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
   </div>
-  <h4>コメント一覧</h4>
+  <h4 class="comment-lists-title">コメント一覧</h4>
   <div class="comment-list" id='comment-list'>
-    
     <% @comments.each do |comment| %>
     <div class="comment-text-lists">
-      <p><%= comment.created_at %></p>
+      <div class="comment-user-config">
+        <%=link_to "#{comment.user.name}さん" ,profile_user_path(comment.user.id),class:"comment-user-name-link",method: :get%>        
+      </div>
       <div class="comment-textes">
-        <p><%= comment.user.name %></p>
         <p><%= comment.comment_text %></p>
+        <p class="created-times"><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></p>
       </div>
     </div>
     <%end%>

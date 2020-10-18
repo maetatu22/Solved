@@ -1,0 +1,21 @@
+<%= render partial: "problems/header2" %>
+
+<div class='form-header'>
+  <h1 class='form-header-text'>
+    回答をしてくれたユーザー
+  </h1>
+</div>
+
+<div class="texts-header-short">
+  <p>一番良いコメントをしてくれたユーザーを選択してください</p>
+</div>
+
+<div class="good-comment-users">
+  <% @comments.each do |comment|%>
+  <div class="good-comment-user">
+    <%= link_to  "/user/#{comment.user.id}/problem/#{@problem.id}",class: "best-answer-users-link", method: :post do %>
+      <%= "#{comment.user.name}さん" %>
+    <%end%>
+  </div>
+  <%end%>
+</div>
