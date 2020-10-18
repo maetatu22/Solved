@@ -23,7 +23,7 @@ consumer.subscriptions.create("MessageChannel", {
     `;
     const comments = document.getElementById('comment-list');
     const newComment = document.getElementById('comment_comment_text');
-    comments.insertAdjacentHTML('afterbegin', html);
+    comments.insertAdjacentHTML('afterend', html);
     newComment.value = '';
   }
 });

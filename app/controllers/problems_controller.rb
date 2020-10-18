@@ -22,7 +22,7 @@ class ProblemsController < ApplicationController
   def show
     @problem = Problem.find(params[:id])
     @comment = Comment.new
-    @comments = @problem.comments.includes(:problem,:user).order("created_at DESC")
+    @comments = @problem.comments.includes(:problem,:user).order("created_at ASC")
   end
   
   def search

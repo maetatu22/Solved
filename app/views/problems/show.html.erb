@@ -3,9 +3,8 @@
 <div class='form-header'>
   <h1 class='form-header-text'>
     <%= link_to profile_user_path(@problem.user.id), class:"user-name-link",method: :get do%>
-    <%= @problem.user.name %>
+    <%= "#{@problem.user.name}さんの投稿" %>
     <%end%>
-    <span>さんの投稿</span>
   </h1>
 </div>
 
