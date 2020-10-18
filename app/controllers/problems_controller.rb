@@ -23,7 +23,6 @@ class ProblemsController < ApplicationController
     @problem = Problem.find(params[:id])
     @comment = Comment.new
     @comments = @problem.comments.includes(:problem,:user).order("created_at DESC")
-    
   end
   
   def search
@@ -51,6 +50,11 @@ class ProblemsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def best_answer
+    @comments = Comment.select(:problem_id, :user_id).distinct.where(problem_id: params[:id]).where.not(user_id: current_user.id)
+    @problem = Problem.find(params[:id])
   end
 
   private

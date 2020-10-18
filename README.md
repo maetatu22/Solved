@@ -17,6 +17,7 @@
 - has_many :comments
 - has_many :sns_credentials
 - belongs_to_active_hash :gender
+- has_many :best_users
 
 ## problemsテーブル
 
@@ -33,6 +34,7 @@
 - has_many :comments
 - belongs_to_active_hash :genre
 - has_one :solved_worries
+- has_one :best_user
 
 ## commentsテーブル
 
@@ -68,5 +70,17 @@
 
 ### Association
 
+- belongs_to :problem
+
+## best_usersテーブル
+
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| user               | references | foreign_key: true |
+| problem            | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
 - belongs_to :problem
 

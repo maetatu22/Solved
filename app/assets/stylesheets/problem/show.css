@@ -1,18 +1,19 @@
-.details{
-  
-  width: 50vw;
+ .details{
+  padding: 0.5em 1em;
+    margin: 1em 0;
+    background: #f4f4f4;
+    border-left: solid 6px #fda1bd;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+  width: 67%;
+  font-size: 25px;
   margin: 0 auto;
-  background-color: rgb(202, 216, 216);
-  border: 2px solid rgb(153, 144, 144);
-  
+  margin-top: 20px;
+  color: rgb(27, 89, 221);
 }
 
-.show-config{
-  display: flex;
-}
-
-.edit{
-  margin-right: 20px;
+.detail-title h2{
+  border-bottom: 2px solid #a79fa1;
+  padding-bottom: 20px;
 }
 
 .user-name-link{
@@ -20,3 +21,210 @@
   color: rgb(228, 74, 176);
 }
 
+.genre-selected{
+  color: black;
+  font-size: 20px;
+  text-align: right;
+}
+
+.created-at{
+  color: black;
+}
+
+.detail-text{
+  width: 50vw;
+  margin-left: 20px;
+}
+
+.show-config{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.edit-btn{
+  text-decoration: none;
+  /* margin-right: 20px; */
+  background-color: rgb(120, 162, 224);
+  padding: 15px;
+  color: white;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #2a5253 inset;
+  border-radius: 2px;
+  transition: .3s;
+  font-family: initial;
+}
+
+.destroy-btn{
+  text-decoration: none;
+  /* margin-right: 20px; */
+  background-color: rgb(164, 86, 228);
+  padding: 15px;
+  color: white;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #2a5253 inset;
+  border-radius: 2px;
+  transition: .3s;
+  font-family: initial;
+}
+
+.solved-btn-pink{
+  text-decoration: none;
+  /* margin-right: 20px; */
+  background-color: rgb(230, 52, 206);
+  padding: 15px;
+  color: white;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 -4px 5px -2px #2a5253 inset;
+  border-radius: 2px;
+  transition: .3s;
+  font-family: initial;
+}
+
+.solved-text{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 52px;
+}
+
+.solved-text h2{
+  color: #dd5a70;
+  font-size: 40px;
+  border-bottom: 5px dashed #e0a0e0;
+  padding: 10px 0;
+}
+
+.best-answer-select{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.best-answer-select-link{
+  display: inline-block;
+  width: 700px;
+  text-align: center;
+  font-size: 32px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background-image: linear-gradient(-90deg, #FF006E, #FFD500);
+  transition: .5s;
+  background-size: 200%;
+
+}
+
+.best-answer-select-link:hover{
+  background-position: right center;
+}
+
+.best-answer-name-link{
+  display: inline-block;
+  width: 700px;
+  text-align: center;
+  font-size: 32px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background-image: linear-gradient(-90deg, #FF006E, #FFD500);
+  transition: .5s;
+  background-size: 200%;
+}
+
+.best-answer-name-link:hover{
+  background-position: right center;
+}
+
+
+.comments-lists-block{
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.comments-box{
+  background-color: #f4f4f4;
+  border: none;
+  width: 80%;
+  height: 210px;
+  outline:none;
+  font-size: 20px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+}
+
+.comment-submit{
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+  color: rgb(136, 129, 129);
+  width: 40%;
+  margin-top:16px;
+  height: 40px;
+  transition: .5s;
+}
+
+.comment-submit:hover{
+  background-color: rgb(150, 141, 141);
+}
+
+.comment-lists-title{
+  position: relative;
+  padding: 0.25em 0;
+  font-size: 20px;
+}
+
+.comment-lists-title:after{
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(230, 90, 90), transparent);
+  background: linear-gradient(to right, rgb(236, 135, 211), transparent);
+}
+
+.comment-textes{
+  background-color: #f4f4f4;
+  position: relative;
+  padding: 10px 20px 2px 20px;
+  margin: 24px 30px 30px 30px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+}
+
+.comment-textes::before{
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: -15px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #f4f4f4;
+  border-left: 15px solid transparent
+}
+
+.created-times{
+  text-align: right;
+}
+
+.comment-user-name-link{
+  text-decoration: none;
+  color: rgb(228, 74, 176);
+  font-size: 23px;
+}
+
+.comment-user-config{
+  font-size: 23px;
+}
+
+.solved-comment-no{
+  text-align: center;
+  margin-top: 80px;
+  font-size: 20px;
+}

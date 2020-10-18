@@ -5,6 +5,7 @@ class Problem < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
   has_one :solved_worrie, dependent: :destroy
+  has_one :best_user, dependent: :destroy
 
   def self.search(search)
     if search != ""

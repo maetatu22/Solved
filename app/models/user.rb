@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :problems
   has_many :comments
   has_many :sns_credentials
+  has_many :best_users
   belongs_to_active_hash :gender
 
   validates :name, presence: true

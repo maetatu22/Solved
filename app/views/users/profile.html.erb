@@ -2,21 +2,22 @@
 
 <div class='form-header'>
     <h1 class='form-header-text-profile'>
-     <%= @user.name%> <span>さんのプロフィール</span>
+     <%= "#{@user.name}さんのプロフィール"%> 
     </h1>
 </div>
-
+ 
+ <h4 class="self-introduction-title">自己紹介</h4>
 <div class="profiles">
   <div class="profile-text">
-    <h4>自己紹介</h4>
+   
     <p><%= @user.self_introduction %></p>
   </div>
   <div class="profile-jender">
-    <h4>性別</h4>
+    <h4 class="blue-title">性別</h4>
     <p><%= @user.gender.name %></p>
   </div>
   <div class="profile-birthday">
-  <h4>年齢</h4>
+  <h4 class="blue-title">生年月日</h4>
   <% if @user.birthday != nil %>
   <pre><%= "#{@user.birthday.year}年 #{@user.birthday.month}月 #{@user.birthday.day}日" %></pre>
   <%else%>
@@ -25,19 +26,23 @@
   </div>
 </div>
 
-<div class="edits">
-  <% if user_signed_in? && current_user.id == @user.id%>
-    <div class="profile-edit">
-    <%= link_to profile_edit_user_path(@user.id), method: :get do %>
-      <h2>プロフィールを編集</h2>
-    <%end%>
+<div class="profile-settings">
+  <div class="user-previews-links">
+    <div class="user-previews-link">
+      <%= link_to user_path(@user.id) ,class:"user-previews-link-go", method: :get do%>
+        <h2><%="#{@user.name}さんの投稿一覧"%></h2>
+      <%end%>
     </div>
-  <%end%>
+  </div>
+  <div class="edits">
+    <% if user_signed_in? && current_user.id == @user.id%>
+      <div class="profile-edit">
+      <%= link_to profile_edit_user_path(@user.id),class:"profile-edit-user-link", method: :get do %>
+        <h2>プロフィールを編集</h2>
+      <%end%>
+      </div>
+    <%end%>
+  </div>
 </div>
 
 
-<div>
-  <%= link_to user_path(@user.id) , method: :get do%>
-    <%"#{@user.name}さんの投稿一覧"%>
-  <%end%>
-</div>
