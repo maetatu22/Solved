@@ -62,7 +62,7 @@
  ## ベストアンサー選択画面
 
  [![Image from Gyazo](https://i.gyazo.com/e6662670ccd6eda571426b8693eb3289.png)](https://gyazo.com/e6662670ccd6eda571426b8693eb3289)
- #
+ # 選択後
  [![Image from Gyazo](https://i.gyazo.com/bbf74a81a75172d308bedc99f4a2413f.png)](https://gyazo.com/bbf74a81a75172d308bedc99f4a2413f)
 
 
