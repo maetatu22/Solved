@@ -62,8 +62,13 @@
  ## ベストアンサー選択画面
 
  [![Image from Gyazo](https://i.gyazo.com/e6662670ccd6eda571426b8693eb3289.png)](https://gyazo.com/e6662670ccd6eda571426b8693eb3289)
- # 選択後
+ ### 選択後
  [![Image from Gyazo](https://i.gyazo.com/bbf74a81a75172d308bedc99f4a2413f.png)](https://gyazo.com/bbf74a81a75172d308bedc99f4a2413f)
+
+ ## プロフィール画面 (自分のアカウントの場合は編集も可能)
+
+ [![Image from Gyazo](https://i.gyazo.com/9f97bcce2bc659e9152af2f620988aac.png)](https://gyazo.com/9f97bcce2bc659e9152af2f620988aac)
+ [![Image from Gyazo](https://i.gyazo.com/a846b6e7a6cd76b32a214efc1f856dae.png)](https://gyazo.com/a846b6e7a6cd76b32a214efc1f856dae)
 
 
 # テーブル設計
