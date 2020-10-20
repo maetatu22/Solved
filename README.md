@@ -22,7 +22,7 @@
 ## 本番環境 (デプロイ先とテストアカウント & ID) 
 
 * [GitHub]https://github.com/maetatu22/Solved
-* [デプロイ先]http://46.51.237.161/
+* [デプロイ先(AWS)]http://46.51.237.161/
 * テストアカウント :Email: testtest@gmail.com / Password: test1234
 * テストアカウント2:Email: testtest2@gmail.com / Password: test1234
 
@@ -69,6 +69,24 @@
 
  [![Image from Gyazo](https://i.gyazo.com/9f97bcce2bc659e9152af2f620988aac.png)](https://gyazo.com/9f97bcce2bc659e9152af2f620988aac)
  [![Image from Gyazo](https://i.gyazo.com/a846b6e7a6cd76b32a214efc1f856dae.png)](https://gyazo.com/a846b6e7a6cd76b32a214efc1f856dae)
+
+ ## こだわりのポイント
+
+ * 非同期通信のコメントでチャットができるため、緊急を伴う悩みでも相性が良い
+ * 悩みが解決するとベストアンサーを選択することができ、ベストアンサーに選ばれたユーザーはプロフィールに回数が表示される
+ * FacebookとGoogleアカウントでログイン/サインイン機能
+
+ ## 改善点
+ * 本番環境で非同期のコメントがリロードしないと反映されないため改善中です。
+   11月中には改善させます。
+
+## 課題や今後実装したい機能
+* コメントの位置を自分側と相手側で分ける
+  - 自分の送信したコメントなのか、相手の送信したコメントなのか判別がしやすくするため
+* カテゴリー別の検索機能
+* javascriptを利用してページ遷移数を減らす
+
+
 
 
 # テーブル設計
