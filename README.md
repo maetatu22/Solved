@@ -21,8 +21,8 @@
 
 ## 本番環境 (デプロイ先とテストアカウント & ID) 
 
-* [GitHub](https://github.com/maetatu22/Solved) 
-* [デプロイ先](http://46.51.237.161/)
+* [GitHub]https://github.com/maetatu22/Solved
+* [デプロイ先]http://46.51.237.161/
 * テストアカウント :Email: testtest@gmail.com / Password: test1234
 * テストアカウント2:Email: testtest2@gmail.com / Password: test1234
 
