@@ -25,6 +25,7 @@
 * [デプロイ先(AWS)]http://46.51.237.161/
 * テストアカウント :Email: testtest@gmail.com / Password: test1234
 * テストアカウント2:Email: testtest2@gmail.com / Password: test1234
+* Basic認証: ID: marin / Password: 20072020
 
 ## DEMO
 
