@@ -28,9 +28,18 @@
 
 ## DEMO
 
-## トップ画面
+## トップ画面(お悩み投稿一覧表示画面)
 
-[![Image from Gyazo](https://i.gyazo.com/c5dc0b94b3ae5b4d0fab2d0f7666a7cf.png)](https://gyazo.com/c5dc0b94b3ae5b4d0fab2d0f7666a7cf)
+[![Image from Gyazo](https://i.gyazo.com/614015edfae80d595de40ae53f593419.png)](https://gyazo.com/614015edfae80d595de40ae53f593419)
+
+## ログイン画面
+
+[![Image from Gyazo](https://i.gyazo.com/52b4a8bcb92956a77398b8332fdf41b5.png)](https://gyazo.com/52b4a8bcb92956a77398b8332fdf41b5)
+
+## 新規登録画面
+
+[![Image from Gyazo](https://i.gyazo.com/4b64e1d8504e17b91674918370996af2.png)](https://gyazo.com/4b64e1d8504e17b91674918370996af2)
+[![Image from Gyazo](https://i.gyazo.com/f1b8dd400a24ebec7eb110cddc07e229.png)](https://gyazo.com/f1b8dd400a24ebec7eb110cddc07e229)
 
 
 # テーブル設計
