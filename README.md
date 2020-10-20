@@ -6,10 +6,32 @@
 
  非同期通信を利用したチャットでやりとりしながら悩みを解決できる、お悩み解決アプリです。
 
-# 接続先情報
- >* http://46.51.237.161/
+## 実装機能
 
- >>aaaaa
+* ユーザー管理機能(gem:devise)
+* ユーザープロフィールページ詳細・編集機能
+* SNS(Twitter, Facebook)アカウントでサインアップ/ログイン
+* お悩み新規投稿・詳細・編集・削除機能
+* 投稿一覧表示・ユーザー個別投稿一覧表示機能
+* 検索機能
+* エラー文日本語表示機能
+* 画像プレビュー機能
+* コメント機能(非同期)
+* ベストアンサー選択機能
+
+## 本番環境 (デプロイ先とテストアカウント & ID) 
+
+* [GitHub](https://github.com/maetatu22/Solved) 
+* [デプロイ先](http://46.51.237.161/)
+* テストアカウント :Email: testtest@gmail.com / Password: test1234
+* テストアカウント2:Email: testtest2@gmail.com / Password: test1234
+
+## DEMO
+
+## トップ画面
+
+[![Image from Gyazo](https://i.gyazo.com/c5dc0b94b3ae5b4d0fab2d0f7666a7cf.png)](https://gyazo.com/c5dc0b94b3ae5b4d0fab2d0f7666a7cf)
+
 
 # テーブル設計
 
