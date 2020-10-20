@@ -55,6 +55,15 @@
 
  [![Image from Gyazo](https://i.gyazo.com/9dc7c067e9b52756a62790619223db16.png)](https://gyazo.com/9dc7c067e9b52756a62790619223db16)
 
+ ## お悩み解決済み画面
+
+ [![Image from Gyazo](https://i.gyazo.com/471026a62845104f64999b6702565ec3.png)](https://gyazo.com/471026a62845104f64999b6702565ec3)
+
+ ## ベストアンサー選択画面
+
+ [![Image from Gyazo](https://i.gyazo.com/e6662670ccd6eda571426b8693eb3289.png)](https://gyazo.com/e6662670ccd6eda571426b8693eb3289)
+   [![Image from Gyazo](https://i.gyazo.com/bbf74a81a75172d308bedc99f4a2413f.png)](https://gyazo.com/bbf74a81a75172d308bedc99f4a2413f)
+
 
 # テーブル設計
 
