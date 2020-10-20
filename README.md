@@ -51,6 +51,10 @@
  [![Image from Gyazo](https://i.gyazo.com/dea6adb10ad1e38cd0bf3424a912f825.jpg)](https://gyazo.com/dea6adb10ad1e38cd0bf3424a912f825)
  [![Image from Gyazo](https://i.gyazo.com/26729f929e0a76d855f8dace60efc083.png)](https://gyazo.com/26729f929e0a76d855f8dace60efc083)
 
+ ## コメント画面
+
+ [![Image from Gyazo](https://i.gyazo.com/9dc7c067e9b52756a62790619223db16.png)](https://gyazo.com/9dc7c067e9b52756a62790619223db16)
+
 
 # テーブル設計
 
