@@ -43,8 +43,8 @@
 
  ## お悩み投稿画面
 
- [![Image from Gyazo](https://i.gyazo.com/12e8767172c7dd7ce11d26ea03b878ea.png)](https://gyazo.com/12e8767172c7dd7ce11d26ea03b878ea)
- [![Image from Gyazo](https://i.gyazo.com/56534e6be16172ee41284e43028ea3fe.png)](https://gyazo.com/56534e6be16172ee41284e43028ea3fe)
+ [![Image from Gyazo](https://i.gyazo.com/642141c0e3421015b46c36dc39c93bbd.png)](https://gyazo.com/642141c0e3421015b46c36dc39c93bbd)
+ [![Image from Gyazo](https://i.gyazo.com/fb1b4227ce1a56e49031561f97bc64ee.png)](https://gyazo.com/fb1b4227ce1a56e49031561f97bc64ee)
 
 
 # テーブル設計
